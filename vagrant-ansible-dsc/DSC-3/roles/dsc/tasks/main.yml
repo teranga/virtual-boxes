@@ -1,0 +1,3 @@
+---
+- include: install-dsc.yml
+- include: start-dsc.yml

@@ -1,0 +1,2 @@
+- name: starting Cassandra
+  service: name=cassandra enabled=yes state=started

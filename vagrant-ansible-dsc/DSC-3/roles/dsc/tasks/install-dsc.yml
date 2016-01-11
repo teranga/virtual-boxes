@@ -1,0 +1,28 @@
+---
+# Install Datastax Cassandra 3.0
+- name: Adding the DataStax Community repository
+  apt_repository: repo='deb http://debian.datastax.com/community stable main'
+
+- name: Adding the DataStax repository key to the aptitude trusted keys.
+  shell: curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
+
+- name: Updating APT package cache
+  apt: update_cache=yes
+
+# Starting Cassandra as a service fails, see below (Disabling ulimit...)
+- name: Installing Datastax Cassandra 3.0
+  apt: pkg=dsc30 state=latest install_recommends=no
+  register: cassandra
+
+# Adds limit to sysctl.conf
+- name: Setting max map count
+  shell: echo 'vm.max_map_count = 131072' > /etc/sysctl.conf
+
+- name: Reloading sysctl
+  shell: sysctl -p
+
+- name: Disabling swap
+  shell: swapoff --all
+
+- name: configuring datastax community
+  template: src=cassandra.yaml dest=/etc/cassandra/cassandra.yaml

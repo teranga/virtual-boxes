@@ -1,0 +1,5 @@
+---
+- name: waiting for cassandra to start
+  pause: seconds=45
+- name: initialize testdb keyspace
+  shell: cqlsh -f /vagrant/data/schema.cql 192.168.1.11
