@@ -1,0 +1,13 @@
+---
+- name: 'Common packages installation'
+  hosts: all
+  sudo: true
+  roles:
+  - common
+
+- name: 'Cassandra DSC nodes installation'
+  hosts: cassandra_nodes
+  sudo: true
+  roles:
+  - cassandra
+

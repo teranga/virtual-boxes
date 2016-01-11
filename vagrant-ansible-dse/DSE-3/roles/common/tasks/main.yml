@@ -1,0 +1,3 @@
+---
+- include: repos.yml
+- include: java7.yml

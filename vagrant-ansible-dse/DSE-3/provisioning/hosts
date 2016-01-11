@@ -1,0 +1,6 @@
+[opscenter_host]
+opscenter ansible_ssh_host=192.168.1.10
+
+[cassandra_nodes]
+cassandra01 ansible_ssh_host=192.168.1.11
+cassandra02 ansible_ssh_host=192.168.1.22

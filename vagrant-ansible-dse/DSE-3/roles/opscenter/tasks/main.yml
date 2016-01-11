@@ -1,0 +1,7 @@
+---
+- name: installing opscenter
+  apt: pkg=opscenter state=installed update-cache=yes
+  register: opscenterd
+
+- name: starting opscenter
+  service: name=opscenterd enabled=yes state=started

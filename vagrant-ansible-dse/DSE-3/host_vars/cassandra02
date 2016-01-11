@@ -1,0 +1,5 @@
+config:
+   cluster_name: 'DSE-3'
+   seeds: '192.168.1.11'
+   listen_address: 192.168.1.22
+   rpc_address: 192.168.1.22

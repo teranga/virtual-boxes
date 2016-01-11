@@ -1,0 +1,4 @@
+---
+- include: install-dsc.yml
+- include: start-dsc.yml
+- include: init-testdb.yml

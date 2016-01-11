@@ -1,0 +1,6 @@
+- name: installing datastax community
+  apt: pkg=dsc22 state=installed update-cache=yes
+  register: cassandra
+
+- name: configuring datastax community
+  template: src=cassandra.yaml dest=/etc/cassandra/cassandra.yaml

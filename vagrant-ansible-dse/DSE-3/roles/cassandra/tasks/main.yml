@@ -1,0 +1,3 @@
+---
+- include: install-dse.yml
+- include: start-dse.yml
