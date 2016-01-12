@@ -1,4 +1,0 @@
-[cassandra_nodes]
-cassandra01 ansible_ssh_host=192.168.1.11
-cassandra02 ansible_ssh_host=192.168.1.12
-cassandra03 ansible_ssh_host=192.168.1.13

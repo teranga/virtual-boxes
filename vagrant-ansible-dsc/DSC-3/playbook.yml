@@ -11,3 +11,8 @@
   roles:
   - dsc
 
+- name: 'Initializing database'
+  hosts: cassandra01
+  roles:
+  - db
+

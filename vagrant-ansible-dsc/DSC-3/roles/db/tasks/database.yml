@@ -1,0 +1,5 @@
+---
+- name: waiting 25s for cassandra to be ready
+  pause: seconds=25
+- name: running database creation script
+  shell: cqlsh -f /vagrant/data/database.cql 192.168.1.11
